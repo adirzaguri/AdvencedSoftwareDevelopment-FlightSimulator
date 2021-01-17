@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import view.MapDisplayer?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClientWindowController">
+   <center>
+      <AnchorPane prefHeight="371.0" prefWidth="773.0" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton layoutX="308.0" layoutY="9.0" mnemonicParsing="false" onAction="#Interpert" prefHeight="37.0" prefWidth="76.0" text="Auotpilot">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton layoutX="529.0" layoutY="9.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" text="Manual">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </RadioButton>
+            <TextArea fx:id="Interperter_TextArea" layoutX="308.0" layoutY="61.0" prefHeight="296.0" prefWidth="183.0" style="-fx-background-color: yellow;" text="none&#10;">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextArea>
+            <Button layoutX="424.0" layoutY="15.0" mnemonicParsing="false" onAction="#LoadTxtFile" prefHeight="18.0" prefWidth="82.0" text="Load txt file" />
+            <Label layoutX="605.0" layoutY="63.0" text="&lt;- aileron -&gt;" />
+            <HBox layoutX="21.0" layoutY="18.0" prefHeight="45.0" prefWidth="280.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#OpenPopup" text="Connect">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#LoadData" text="Load data">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Calculate Path">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <MapDisplayer fx:id ="mapDisplayer" height="248.0" layoutX="21.0" layoutY="71.0" style="-fx-background-color: blue;" width="270.0" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="482.0" AnchorPane.topAnchor="71.0" />
+            <Slider layoutX="513.0" layoutY="98.0" orientation="VERTICAL" prefHeight="176.0" prefWidth="32.0" />
+            <Canvas fx:id="joystickPaint" height="189.0" layoutX="545.0" layoutY="85.0" width="189.0"  onMouseDragReleased="#joystickReleased"/>
+            <Label layoutX="631.0" layoutY="308.0" text="rudder" />
+            <Label layoutX="716.0" layoutY="166.0" prefHeight="14.0" prefWidth="69.0" rotate="90.0" text="&lt;- elvator -&gt;" />
+            <Slider layoutX="529.0" layoutY="287.0" prefHeight="14.0" prefWidth="239.0" />
+            <Label layoutX="492.0" layoutY="171.0" rotate="270.0" text="throttle" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
